@@ -28,6 +28,6 @@ function checkLength(string){
     }
 }
 
-capitalise(50000)
-    .then((data)=>{console.log(data)})
+capitalise("managing promises")
+    .then((data)=> {checkLength(data)})
     .catch(e => {console.log("Error: "+e.message)})
