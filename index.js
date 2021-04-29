@@ -14,21 +14,23 @@ quoteButton.addEventListener('click', ()=>{
 })
 
 const wait = (ms) =>{
-    let start = Date.now(); //initialising 
-    let now = start;
+    let start = Date.now(); //initialising start current time
+    let now = start; //initialising now with start value
     while (now - start < ms){
-        now = Date.now()
+        now = Date.now() //update now's value with the "new current time"
     }
 }
 
 sourceButton.addEventListener('click', ()=>{
-    wait(5000)
-    if (sourceP.style.display == 'none'){
-        sourceButton.innerText = "Hide source"
-        sourceP.style.display = 'block'
-    } else{
-        sourceButton.innerText = "Show source"
-        sourceP.style.display = 'none'
-    }
+    setTimeout(()=>{
+        if (sourceP.style.display == 'none'){
+            sourceButton.innerText = "Hide source"
+            sourceP.style.display = 'block'
+        } else{
+            sourceButton.innerText = "Show source"
+            sourceP.style.display = 'none'
+        }
+    }, 5000)
+    
 })
 
