@@ -3,8 +3,7 @@ let sourceP = document.querySelector(".source")
 let quoteButton = document.getElementById("showQuote")
 let sourceButton = document.getElementById("showSource")
 
-quoteButton.addEventListener('click', (e)=>{
-    //e.preventDefault()
+quoteButton.addEventListener('click', ()=>{
     if (quoteP.style.display == 'none'){
         quoteButton.innerText = "Hide quote"
         quoteP.style.display = 'block'
@@ -14,8 +13,16 @@ quoteButton.addEventListener('click', (e)=>{
     }
 })
 
-const toggleSource = (e)=>{
-    //e.preventDefault()
+const wait = (ms) =>{
+    let start = Date.now();
+    let now = start;
+    while (now - start < ms){
+        now = Date.now()
+    }
+}
+
+sourceButton.addEventListener('click', ()=>{
+    wait(5000)
     if (sourceP.style.display == 'none'){
         sourceButton.innerText = "Hide source"
         sourceP.style.display = 'block'
@@ -23,8 +30,5 @@ const toggleSource = (e)=>{
         sourceButton.innerText = "Show source"
         sourceP.style.display = 'none'
     }
-}
-
-sourceButton.addEventListener('click', ()=>{
-    setTimeout((toggleSource), 3000)
 })
+
