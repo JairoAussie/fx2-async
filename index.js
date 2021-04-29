@@ -14,7 +14,7 @@ quoteButton.addEventListener('click', ()=>{
 })
 
 const wait = (ms) =>{
-    let start = Date.now();
+    let start = Date.now(); //initialising 
     let now = start;
     while (now - start < ms){
         now = Date.now()
