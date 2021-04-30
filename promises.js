@@ -15,7 +15,7 @@ function capitalise (word){
             }else{
                 resolve(word[0].toUpperCase() + word.slice(1).toLowerCase())
             }            
-        },0)
+        },1000)
        
     })
 }
@@ -28,6 +28,6 @@ function checkLength(string){
     }
 }
 
-capitalise("managing promises")
-    .then((data)=> {checkLength(data)})
-    .catch(e => {console.log("Error: "+e.message)})
+capitalise("hi everyone")
+    .then(checkLength)
+    .catch(e => {console.log(e.message)})
